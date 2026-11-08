@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortfoliX — Your Personal Portfolio. Your Professional Identity.</title>
+  <meta name="description" content="Get your own premium portfolio website and customize it without coding. ₹3,500 one-time payment. Personal login credentials, edit anytime, mobile responsive, zero hidden charges.">
+  <meta name="theme-color" content="#0c0d12">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PortfoliX — Your Personal Portfolio. Your Professional Identity.">
+  <meta property="og:description" content="Get your own premium portfolio website for ₹3,500 one-time. Edit anytime without coding.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              main: '#0c0d12',
+              card: '#13151d',
+              subtle: '#181b26',
+              border: 'rgba(255, 255, 255, 0.08)'
+            },
+            brand: {
+              500: '#4f46e5',
+              600: '#4338ca',
+            },
+            telegram: {
+              DEFAULT: '#229ed9',
+              hover: '#1e8dc2'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#0c0d12] text-slate-100 antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col">
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <aside aria-label="Announcement" class="border-b border-white/[0.08] bg-[#10121a] py-2 px-4 text-center text-xs text-slate-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+        Transparent Pricing
+      </span>
+      <span>Complete custom portfolio website with private CMS access for <strong class="text-white font-semibold">₹3,500 one-time</strong>. Zero monthly hosting fees.</span>
+      <a href="#pricing" class="text-indigo-400 hover:text-indigo-300 font-semibold underline underline-offset-4 ml-1">View Pricing Details →</a>
+    </div>
+  </aside>
+
+  <!-- SITE HEADER / NAVBAR -->
+  <header class="sticky top-0 z-40 bg-[#0c0d12]/90 backdrop-blur-md border-b border-white/[0.08]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+          P
+        </div>
+        <span class="font-heading text-lg font-bold text-white tracking-tight">
+          Portfoli<span class="text-indigo-400">X</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#preview" class="hover:text-white transition">Live Examples</a>
+        <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
+        <a href="#features" class="hover:text-white transition">What's Included</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="#support" class="hover:text-white transition flex items-center gap-1.5 text-sky-400">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Support</span>
+        </a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/lakshay-yadav-0879028b/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-slate-400 hover:text-sky-400 hover:bg-white/[0.04] transition" title="Lakshay Yadav on LinkedIn" aria-label="LinkedIn Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 0 0-1.66 1.64 1.64 1.64 0 0 0 1.66 1.63 1.64 1.64 0 0 0 1.65-1.63 1.64 1.64 0 0 0-1.65-1.64z"/></svg>
+        </a>
+        <a href="portfolio-demo.html" target="_blank" class="btn-secondary px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+          <span>View Live Site</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400"></i>
+        </a>
+        <button class="trigger-get-portfolio btn-primary px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-sm">
+          <span>Get Your Portfolio</span>
+          <span class="text-indigo-200 font-mono text-[11px] bg-indigo-700/60 px-1.5 py-0.5 rounded">₹3,500</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobileMenuToggle" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle navigation">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="hidden md:hidden px-4 pt-2 pb-5 bg-[#12141c] border-b border-white/[0.08] space-y-2 text-sm">
+      <a href="#preview" class="block py-2 text-slate-300 hover:text-white">Live Examples</a>
+      <a href="#how-it-works" class="block py-2 text-slate-300 hover:text-white">How It Works</a>
+      <a href="#features" class="block py-2 text-slate-300 hover:text-white">What's Included</a>
+      <a href="#pricing" class="block py-2 text-slate-300 hover:text-white">Pricing (₹3,500)</a>
+      <a href="#support" class="block py-2 text-sky-400 hover:text-sky-300 font-medium">Telegram Support (@Luckyydv_876)</a>
+      <a href="#faq" class="block py-2 text-slate-300 hover:text-white">FAQ</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="portfolio-demo.html" target="_blank" class="w-full btn-secondary py-2 rounded-lg text-xs text-center font-medium">
+          View Demo Site →
+        </a>
+        <button class="trigger-get-portfolio w-full btn-primary py-2.5 rounded-lg text-xs font-semibold text-center">
+          Get Your Portfolio — ₹3,500
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+
+    <!-- ========================================================
+         HERO SECTION
+         ======================================================== -->
+    <section class="pt-16 pb-16 sm:pt-24 sm:pb-20 text-center px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- Refined Badge -->
+        <div class="pill-badge">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Starting at ₹3,500 &bull; One-Time Payment &bull; No Hidden Charges</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-heading text-4xl sm:text-6xl font-bold text-white tracking-tight leading-[1.15]">
+          Your Personal Portfolio. <br />
+          <span class="text-slate-300">Your Professional Identity.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-base sm:text-xl text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
+          Get your own premium portfolio website and customize it without coding.
+        </p>
+
+        <!-- Conversational Value Description -->
+        <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed">
+          A generic resume PDF gets lost in an inbox with 300 applicants. A fast, modern personal website with your projects, case studies, and skills establishes your credibility instantly.
+        </p>
+
+        <!-- CTAs -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+          <button class="trigger-get-portfolio w-full sm:w-auto btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+            <span>Get Your Portfolio</span>
+            <span class="text-indigo-200 font-mono text-xs bg-indigo-700/60 px-2 py-0.5 rounded">₹3,500</span>
+          </button>
+          
+          <a href="#preview" class="w-full sm:w-auto btn-secondary px-5 py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+            <i data-lucide="eye" class="w-4 h-4 text-slate-400"></i>
+            <span>View Demo Profiles</span>
+          </a>
+        </div>
+
+        <!-- Trust Points -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-slate-400 font-medium">
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>
+            Personal Login Credentials
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>
+            Edit Anytime from Phone or Laptop
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>
+            100% Mobile Responsive
+          </span>
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4 text-indigo-400"></i>
+            Free Lifetime Hosting & SSL
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         REALISTIC PORTFOLIO PREVIEWS FOR 4 PROFESSIONS
+         Developer, Data Analyst, Designer, Freelancer
+         ======================================================== -->
+    <section id="preview" class="pb-24 px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto space-y-6">
+        
+        <div class="text-center space-y-2">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+            Tailored to What You Actually Do
+          </h2>
+          <p class="text-sm text-slate-400 max-w-lg mx-auto">
+            Choose your profession below to preview real portfolio layouts with authentic project breakdowns and skills.
+          </p>
+        </div>
+
+        <!-- Profession Switcher Tabs -->
+        <div class="flex items-center justify-center gap-1 sm:gap-2 p-1.5 bg-[#13151f] border border-white/[0.08] rounded-xl max-w-2xl mx-auto overflow-x-auto">
+          <button data-profession="developer" class="preview-tab active-tab flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+            <span>Software Developer</span>
+          </button>
+          
+          <button data-profession="analyst" class="preview-tab flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
+            <span>Data Analyst</span>
+          </button>
+
+          <button data-profession="designer" class="preview-tab flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+            <span>Product Designer</span>
+          </button>
+
+          <button data-profession="freelancer" class="preview-tab flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+            <span>Freelancer & Consultant</span>
+          </button>
+        </div>
+
+        <!-- Realistic Browser Window Frame -->
+        <div class="browser-shell">
+          <!-- Top Window Bar -->
+          <div class="browser-header flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500/70 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/70 inline-block"></span>
+              <span class="ml-2 font-mono text-[11px] text-slate-400 hidden sm:inline">https://portfolio.folio.live</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="text-emerald-400 flex items-center gap-1 text-[11px] font-mono">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> SSL Secure
+              </span>
+              <a href="admin-demo.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium text-xs hidden sm:inline">
+                Test Admin CMS Demo →
+              </a>
+            </div>
+          </div>
+
+          <!-- Dynamic Render Target -->
+          <div id="portfolioPreviewTarget">
+            <!-- Rendered by script.js with authentic content -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         HOW IT WORKS (5-STEP PROCESS)
+         ======================================================== -->
+    <section id="how-it-works" class="py-20 border-t border-white/[0.08] bg-[#0e1017] px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto space-y-12">
+        
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <span class="text-xs font-mono font-semibold uppercase text-indigo-400">Simple Process</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+            How Getting Your Portfolio Works
+          </h2>
+          <p class="text-sm text-slate-400">
+            From zero to an active personal website on your own link in five straightforward steps.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-left">
+          
+          <!-- Step 1 -->
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-bold text-indigo-400">01</span>
+              <h3 class="font-heading text-base font-bold text-white">Choose</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Select the structure that fits your career: Developer, Data Analyst, Designer, or Consultant.
+              </p>
+            </div>
+            <p class="text-[11px] text-slate-400 pt-2 border-t border-white/[0.06]">Tailored layouts</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between border-indigo-500/30">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-bold text-indigo-400">02</span>
+              <h3 class="font-heading text-base font-bold text-white">Purchase</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Pay ₹3,500 one-time via UPI or Card. No recurring monthly subscription bills.
+              </p>
+            </div>
+            <p class="text-[11px] text-indigo-300 pt-2 border-t border-white/[0.06] font-semibold">₹3,500 One-time</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-bold text-indigo-400">03</span>
+              <h3 class="font-heading text-base font-bold text-white">Login</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Receive your private admin login link and credentials directly via Telegram & Email.
+              </p>
+            </div>
+            <p class="text-[11px] text-slate-400 pt-2 border-t border-white/[0.06]">Secure credentials</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-bold text-indigo-400">04</span>
+              <h3 class="font-heading text-base font-bold text-white">Customize</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Add your bio, projects, GitHub links, and resume in an easy form. No coding needed.
+              </p>
+            </div>
+            <p class="text-[11px] text-slate-400 pt-2 border-t border-white/[0.06]">Simple visual editor</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-bold text-indigo-400">05</span>
+              <h3 class="font-heading text-base font-bold text-white">Publish</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Hit save! Your portfolio is live on the internet, ready to share on LinkedIn & job applications.
+              </p>
+            </div>
+            <p class="text-[11px] text-emerald-400 pt-2 border-t border-white/[0.06] font-medium">Live instantly</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         WHAT'S INCLUDED / FEATURES
+         ======================================================== -->
+    <section id="features" class="py-20 border-t border-white/[0.08] px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto space-y-12">
+        
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <span class="text-xs font-mono font-semibold uppercase text-indigo-400">Full Independence</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+            Everything You Need to Own Your Web Presence
+          </h2>
+          <p class="text-sm text-slate-400">
+            You don't need to depend on a developer or pay someone ₹500 every time you finish a new project.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="key" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">Personal Admin Credentials</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              You get a private admin link and password. Log in whenever you want from your phone or laptop to update your headline, bio, or job status.
+            </p>
+          </div>
+
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">Edit Anytime in Real-Time</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Finished a freelance project or earned a certification? Add it to your portfolio in 2 minutes. Changes reflect live on your link immediately.
+            </p>
+          </div>
+
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="smartphone" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">100% Mobile Responsive</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Recruiters open LinkedIn links on iPhones and Android devices. Your website is carefully tested to load cleanly and swiftly on all mobile viewports.
+            </p>
+          </div>
+
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="folder-git-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">Structured Project Showcase</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Display live links, GitHub repositories, Figma embeds, and problem-solution descriptions with clean technical tags.
+            </p>
+          </div>
+
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="file-down" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">1-Click Resume Download</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Upload your latest PDF resume. Visitors and HR managers can download your ATS-ready resume with one tap right from your hero section.
+            </p>
+          </div>
+
+          <div class="clean-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white">Free Hosting & Custom Domain</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Use our included fast subdomain (<code>yourname.folio.live</code>) or link your own custom domain (e.g. <code>yourname.com</code>). Zero hosting charges.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PRICING SECTION (HONEST & TRANSPARENT ₹3,500)
+         ======================================================== -->
+    <section id="pricing" class="py-20 border-t border-white/[0.08] bg-[#0e1017] px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <span class="text-xs font-mono font-semibold uppercase text-indigo-400">Transparent Pricing</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+            ₹3,500 One-Time. No Recurring Fees.
+          </h2>
+          <p class="text-sm text-slate-400">
+            Unlike website builders that charge ₹1,200/month forever, you pay once and own your portfolio for life.
+          </p>
+        </div>
+
+        <!-- Main Pricing Box -->
+        <div class="clean-card p-8 sm:p-10 border-indigo-500/40 relative overflow-hidden text-left space-y-8 bg-[#12141d]">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-semibold">
+                Complete Personal Portfolio Package
+              </span>
+              <h3 class="font-heading text-2xl font-bold text-white mt-2">All-Inclusive Portfolio Setup</h3>
+              <p class="text-xs text-slate-400 mt-1">Everything required to launch, host, and edit your website.</p>
+            </div>
+            <div class="sm:text-right">
+              <p class="font-heading text-4xl font-extrabold text-white">₹3,500</p>
+              <p class="text-xs text-slate-400 font-medium">One-Time Payment &bull; Lifetime Access</p>
+            </div>
+          </div>
+
+          <!-- Feature Breakdown Checklist -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>One-Time Payment:</strong> Zero monthly subscriptions or hosting invoices</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>No Hidden Charges:</strong> Free lifetime cloud hosting and SSL certificate</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Personal Login Credentials:</strong> Private client dashboard access</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Edit Anytime:</strong> Update bio, projects, and skills without writing code</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Mobile Responsive:</strong> Tested across Android and iOS viewports</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Custom Domain Mapping:</strong> Link your own <code>yourname.com</code> at zero extra cost</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>ATS Resume Download:</strong> Instant 1-click PDF download button</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Human Onboarding Support:</strong> Direct Telegram support with @Luckyydv_876</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <button class="trigger-get-portfolio w-full sm:w-auto btn-primary px-7 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+              <span>Order Your Portfolio for ₹3,500</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            
+            <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>Have a question first? Ask @Luckyydv_876 on Telegram</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Honest Comparison Table -->
+        <div class="clean-card p-6 text-left space-y-4">
+          <h4 class="font-heading text-base font-bold text-white">How This Compares to Other Options</h4>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead class="border-b border-white/[0.08] text-slate-400">
+                <tr>
+                  <th class="py-2.5 pr-4">Option</th>
+                  <th class="py-2.5 px-4">Cost</th>
+                  <th class="py-2.5 px-4">Maintenance</th>
+                  <th class="py-2.5 pl-4">Ease of Editing</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/[0.06] text-slate-300">
+                <tr>
+                  <td class="py-3 pr-4 font-semibold text-white">PortfoliX</td>
+                  <td class="py-3 px-4 text-emerald-400 font-bold">₹3,500 one-time</td>
+                  <td class="py-3 px-4">Zero hosting fees &bull; Free SSL</td>
+                  <td class="py-3 pl-4">Visual admin dashboard (No coding)</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-slate-400">Hiring a Freelance Dev</td>
+                  <td class="py-3 px-4">₹15,000 – ₹30,000</td>
+                  <td class="py-3 px-4">Charges ₹500+ for every change</td>
+                  <td class="py-3 pl-4">You have to message them for small typos</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-slate-400">Wix or Squarespace</td>
+                  <td class="py-3 px-4">₹1,200/month (₹14,400/yr)</td>
+                  <td class="py-3 px-4">Website deleted if you cancel</td>
+                  <td class="py-3 pl-4">Bloated drag-and-drop builder</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-slate-400">Building from Scratch</td>
+                  <td class="py-3 px-4">40+ hours of your time</td>
+                  <td class="py-3 px-4">You handle DNS, servers, framework updates</td>
+                  <td class="py-3 pl-4">Requires writing code and terminal deployments</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         TELEGRAM SUPPORT SECTION
+         ======================================================== -->
+    <section id="support" class="py-20 border-t border-white/[0.08] px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="clean-card p-8 sm:p-10 text-center space-y-6 border-sky-500/20 bg-[#10131d]">
+          
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 mx-auto flex items-center justify-center">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+              Need Help? We're Here for You!
+            </h2>
+            <p class="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+              Facing any issues with purchasing, login or customizing your portfolio? Contact us directly on Telegram.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="btn-telegram px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span>Chat with Support on Telegram</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/lakshay-yadav-0879028b/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 bg-[#0077b5]/15 hover:bg-[#0077b5]/25 text-[#38bdf8] border border-[#0077b5]/30 transition">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 0 0-1.66 1.64 1.64 1.64 0 0 0 1.66 1.63 1.64 1.64 0 0 0 1.65-1.63 1.64 1.64 0 0 0-1.65-1.64z"/></svg>
+              <span>Connect on LinkedIn</span>
+            </a>
+
+            <div class="px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-slate-300">
+              Telegram: <span class="text-sky-400 font-bold">@Luckyydv_876</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400">
+            Direct 1-on-1 assistance with onboarding, setup, and questions.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         FREQUENTLY ASKED QUESTIONS (ACCORDION)
+         ======================================================== -->
+    <section id="faq" class="py-20 border-t border-white/[0.08] px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto space-y-10 text-left">
+        
+        <div class="text-center space-y-2">
+          <span class="text-xs font-mono font-semibold uppercase text-indigo-400">Answers</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          
+          <!-- Q1 -->
+          <div class="faq-item active">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>Is ₹3,500 really a one-time fee or will I be charged monthly?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              It is strictly a <strong>one-time payment of ₹3,500</strong>. There are no recurring monthly subscriptions, no server upkeep bills, and no hidden renewal charges. You own your portfolio and login credentials.
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>Do I need any coding knowledge to edit my portfolio?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              No coding whatsoever. You get access to a private, user-friendly admin portal. You can update your bio, job title, projects, GitHub links, and resume via simple text boxes and buttons — just like updating a LinkedIn profile.
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>How do I receive my login credentials after payment?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Immediately after your purchase is confirmed, your private website link and admin login credentials (username and password) will be sent to you directly via Telegram (<strong class="text-sky-400">@Luckyydv_876</strong>) and Email.
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>Can I connect my own custom domain (e.g. rohandeshmukh.com)?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Yes. Your portfolio comes with a free high-speed subdomain (<code>yourname.folio.live</code>) by default. If you own or buy a domain on GoDaddy, Namecheap, or Cloudflare, you can point it to your portfolio with a simple CNAME record at no extra charge.
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>Is the website mobile-responsive?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Yes, 100%. Over 65% of hiring managers and recruiters open portfolio links on mobile devices. The templates are built to load instantly and look sharp on every smartphone and tablet screen size.
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <button class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
+              <span>What if I need help setting up my content?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We provide human support via Telegram at <a href="https://t.me/Luckyydv_876" target="_blank" class="text-sky-400 underline font-semibold">@Luckyydv_876</a>. If you ever have a question about uploading an image or formatting a project, you can reach out directly.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         FINAL CALL TO ACTION
+         ======================================================== -->
+    <section class="py-20 border-t border-white/[0.08] bg-[#0f1118] px-4 sm:px-6 text-center">
+      <div class="max-w-3xl mx-auto space-y-6">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Ready to Claim Your Professional Identity?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+          Stop sending plain PDF resumes. Launch a clean, customizable portfolio website today for <strong class="text-white">₹3,500 one-time</strong>.
+        </p>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button class="trigger-get-portfolio w-full sm:w-auto btn-primary px-7 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+            <span>Get Your Portfolio (₹3,500)</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          
+          <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto btn-secondary px-6 py-3.5 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current text-sky-400" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>Ask a Question on Telegram</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-400">
+          One-time payment &bull; No monthly renewal fees &bull; Personal login credentials included
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/[0.08] bg-[#0c0d12] py-10 px-4 sm:px-6 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-2.5">
+        <div class="w-6 h-6 rounded bg-indigo-600 text-white font-bold text-xs flex items-center justify-center">P</div>
+        <span class="font-heading font-bold text-white text-sm">Portfoli<span class="text-indigo-400">X</span></span>
+        <span class="text-slate-400 text-xs ml-2">Personal Portfolio Platform</span>
+      </div>
+
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="#preview" class="hover:text-white transition">Templates</a>
+        <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing (₹3,500)</a>
+        <a href="#support" class="hover:text-white transition">Support</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>Support: @Luckyydv_876</span>
+        </a>
+        <a href="https://www.linkedin.com/in/lakshay-yadav-0879028b/" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 0 0-1.66 1.64 1.64 1.64 0 0 0 1.66 1.63 1.64 1.64 0 0 0 1.65-1.63 1.64 1.64 0 0 0-1.65-1.64z"/></svg>
+          <span>LinkedIn: Lakshay Yadav</span>
+        </a>
+      </div>
+
+      <p class="text-slate-400 text-center md:text-right">
+        &copy; 2026 PortfoliX. Starting price ₹3,500 one-time.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       ORDER MODAL (TELEGRAM & UPI FLOW)
+       ======================================================== -->
+  <div id="orderModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="modal-box w-full max-w-lg clean-card p-6 sm:p-8 relative text-left bg-[#13151f]">
+      
+      <button data-close-modal class="absolute top-5 right-5 text-slate-400 hover:text-white p-1" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-1 mb-6">
+        <span class="text-xs font-mono uppercase text-indigo-400 font-semibold">One-Time Payment</span>
+        <h3 class="font-heading text-xl sm:text-2xl font-bold text-white">Get Your Portfolio Website</h3>
+        <p class="text-xs text-slate-400">Complete details below to start your portfolio setup for ₹3,500.</p>
+      </div>
+
+      <!-- Pricing Summary Card -->
+      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.08] mb-6 flex items-center justify-between">
+        <div>
+          <p class="text-xs text-slate-300 font-medium">Full Portfolio Setup &bull; Lifetime Access</p>
+          <p class="text-lg font-bold text-white font-heading">₹3,500 <span class="text-xs font-normal text-emerald-400">No monthly fees</span></p>
+        </div>
+        <span class="text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
+          Zero Hidden Charges
+        </span>
+      </div>
+
+      <!-- Order Form -->
+      <form id="orderForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-medium text-slate-300 mb-1">Your Full Name *</label>
+          <input type="text" id="orderName" required placeholder="e.g. Rohan Deshmukh" class="form-input" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1">Profession / Role</label>
+            <select id="orderRole" class="form-input">
+              <option value="Software Developer">Software Developer</option>
+              <option value="Data Analyst">Data Analyst</option>
+              <option value="Product Designer">Product Designer</option>
+              <option value="Freelancer / Consultant">Freelancer / Consultant</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1">Telegram or Email *</label>
+            <input type="text" id="orderContact" required placeholder="e.g. @your_username" class="form-input" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-300 mb-1">Desired Subdomain (Free)</label>
+          <div class="flex items-center">
+            <input type="text" id="orderDomain" placeholder="yourname" class="form-input rounded-r-none font-mono text-right" />
+            <span class="bg-white/[0.06] border border-l-0 border-white/[0.08] text-slate-400 text-xs px-3 py-2.5 rounded-r-xl font-mono">.folio.live</span>
+          </div>
+        </div>
+
+        <div class="pt-2 space-y-2">
+          <button type="submit" class="w-full btn-telegram py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            <span>Proceed via Telegram Support (@Luckyydv_876)</span>
+          </button>
+
+          <button type="button" id="openUpiBtn" class="w-full btn-secondary py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2">
+            <i data-lucide="qr-code" class="w-4 h-4 text-indigo-400"></i>
+            <span>Or Pay Directly via UPI (₹3,500)</span>
+          </button>
+        </div>
+
+        <p class="text-[11px] text-slate-400 text-center pt-1">
+          No credit card required. Personal login credentials delivered after verification.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+         UPI DIRECT PAYMENT MODAL
+         ======================================================== -->
+  <div id="upiModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="modal-box w-full max-w-md clean-card p-6 sm:p-8 relative text-left bg-[#13151f]">
+      
+      <button data-close-modal class="absolute top-5 right-5 text-slate-400 hover:text-white p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="upiDetailsView" class="space-y-4">
+        <div class="text-center space-y-1">
+          <span class="text-xs font-mono uppercase text-indigo-400 font-semibold">Instant UPI</span>
+          <h3 class="font-heading text-xl font-bold text-white">Scan & Pay ₹3,500</h3>
+          <p class="text-xs text-slate-400">One-time payment for lifetime portfolio & CMS access</p>
+        </div>
+
+        <div class="bg-white p-3.5 rounded-xl max-w-[190px] mx-auto text-center shadow-md">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=portfolio.sales@upi&pn=PortfoliX&am=3500&cu=INR" alt="UPI QR Code" class="w-full h-auto mx-auto rounded" />
+          <p class="text-[10px] text-slate-700 font-semibold mt-1">GPay &bull; PhonePe &bull; Paytm &bull; BHIM</p>
+        </div>
+
+        <div class="p-3 bg-white/[0.03] rounded-lg border border-white/[0.08] flex items-center justify-between text-xs">
+          <div>
+            <span class="text-slate-400 block text-[10px]">UPI ID</span>
+            <span id="upiIdText" class="font-mono text-white font-semibold">portfolio.sales@upi</span>
+          </div>
+          <button id="copyUpiBtn" class="px-2.5 py-1 rounded bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/30 font-medium text-xs">
+            Copy UPI ID
+          </button>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-300 mb-1">Enter 12-digit UTR / UPI Reference No.</label>
+          <input type="text" id="utrInput" placeholder="e.g. 432109876543" class="form-input font-mono text-sm" />
+        </div>
+
+        <button id="confirmUpiBtn" class="w-full btn-primary py-3 rounded-xl text-sm font-semibold">
+          Submit Reference & Get Credentials
+        </button>
+      </div>
+
+      <div id="upiSuccessView" class="hidden text-center py-6 space-y-3">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-heading text-xl font-bold text-white">Payment Submitted</h4>
+        <p class="text-xs text-slate-300 max-w-xs mx-auto leading-relaxed">
+          Your UTR reference has been noted. Please message <strong class="text-sky-400 font-mono">@Luckyydv_876</strong> on Telegram to receive your login credentials immediately.
+        </p>
+        <div class="pt-2">
+          <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="btn-telegram px-5 py-2.5 rounded-lg text-xs font-semibold inline-flex items-center gap-1.5">
+            <span>Open Telegram @Luckyydv_876</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       FLOATING TELEGRAM SUPPORT BUTTON (CLEAN & NON-DISTRACTING)
+       ======================================================== -->
+  <aside aria-label="Support">
+    <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 floating-telegram-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-full text-white" title="Support: @Luckyydv_876 on Telegram">
+      <div class="relative flex items-center justify-center">
+        <svg class="w-5 h-5 fill-[#229ed9]" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+        </svg>
+        <span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400"></span>
+      </div>
+      <div class="hidden sm:block text-left text-xs font-mono">
+        <span class="text-slate-400 text-[10px] block leading-none">Support</span>
+        <span class="text-sky-400 font-bold leading-none">@Luckyydv_876</span>
+      </div>
+    </a>
+  </aside>
+
+  <!-- Client Script -->
+  <script src="script.js"></script>
+</body>
+</html>
