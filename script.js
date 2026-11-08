@@ -322,6 +322,61 @@ function initFaqAccordion() {
   });
 }
 
+const PRICING_PLANS = {
+  minimal: {
+    name: 'Minimal Portfolio',
+    originalPrice: '₹2,500',
+    offerPrice: '₹1,999',
+    savings: 'Save ₹500',
+    amount: 1999
+  },
+  professional: {
+    name: 'Professional Portfolio',
+    originalPrice: '₹3,500',
+    offerPrice: '₹3,200',
+    savings: 'Save ₹300',
+    amount: 3200
+  },
+  premium: {
+    name: 'Premium Portfolio',
+    originalPrice: '₹5,000',
+    offerPrice: '₹4,300',
+    savings: 'Save ₹700',
+    amount: 4300
+  }
+};
+
+let selectedPlan = 'professional';
+
+function setOrderPlan(planKey) {
+  selectedPlan = planKey in PRICING_PLANS ? planKey : 'professional';
+  const plan = PRICING_PLANS[selectedPlan];
+
+  const planSelect = document.getElementById('orderPlanSelect');
+  if (planSelect) planSelect.value = selectedPlan;
+
+  const titleEl = document.getElementById('modalPlanTitle');
+  if (titleEl) titleEl.innerText = `${plan.name} • Special Launch Offer`;
+
+  const priceEl = document.getElementById('modalPlanPrice');
+  if (priceEl) {
+    priceEl.innerHTML = `${plan.offerPrice} <span class="text-xs text-slate-400 line-through font-normal">${plan.originalPrice}</span> <span class="text-xs text-purple-400 font-semibold">(${plan.savings})</span>`;
+  }
+
+  const upiAmountText = document.getElementById('upiAmountText');
+  if (upiAmountText) upiAmountText.innerText = plan.offerPrice;
+
+  const upiQrImage = document.getElementById('upiQrImage');
+  if (upiQrImage) {
+    upiQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=portfolio.sales@upi&pn=PortfoliX&am=${plan.amount}&cu=INR`;
+  }
+
+  const payUpiBtnText = document.getElementById('payUpiBtnText');
+  if (payUpiBtnText) {
+    payUpiBtnText.innerText = `Or Pay Directly via UPI (${plan.offerPrice})`;
+  }
+}
+
 // -------------------------------------------------------------------
 // MODALS & ORDER / TELEGRAM FLOW
 // -------------------------------------------------------------------
@@ -329,13 +384,23 @@ function initModals() {
   const orderModal = document.getElementById('orderModal');
   const upiModal = document.getElementById('upiModal');
 
-  // Trigger buttons
+  // Trigger buttons with plan attribution
   document.querySelectorAll('.trigger-get-portfolio').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      const plan = btn.dataset.plan || 'professional';
+      setOrderPlan(plan);
       openModal(orderModal);
     });
   });
+
+  // Modal plan dropdown switcher
+  const planSelect = document.getElementById('orderPlanSelect');
+  if (planSelect) {
+    planSelect.addEventListener('change', (e) => {
+      setOrderPlan(e.target.value);
+    });
+  }
 
   // Close triggers
   document.querySelectorAll('[data-close-modal]').forEach(btn => {

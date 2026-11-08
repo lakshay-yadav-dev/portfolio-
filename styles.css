@@ -241,3 +241,40 @@ h1, h2, h3, h4, .font-heading {
   outline: none;
   background: #1a1c26;
 }
+
+/* Pricing Upgrade Styles */
+.pricing-card-featured {
+  background: #141622;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  box-shadow: 0 16px 40px -10px rgba(99, 102, 241, 0.15);
+  position: relative;
+}
+
+.badge-launch-offer {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(99, 102, 241, 0.2) 100%);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.discount-badge {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.price-discounted {
+  color: #c084fc;
+}
+
+.mini-preview-shell {
+  background: #0a0b10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  user-select: none;
+}
+
