@@ -278,3 +278,47 @@ h1, h2, h3, h4, .font-heading {
   user-select: none;
 }
 
+/* Mobile Responsiveness Improvements */
+@media (max-width: 640px) {
+  .pill-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+    line-height: 1.4;
+    border-radius: 9999px;
+    max-width: 100%;
+  }
+  
+  .clean-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .browser-header {
+    padding: 8px 12px;
+  }
+
+  .floating-telegram-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 12px;
+  }
+
+  .mini-preview-shell {
+    padding: 10px;
+  }
+
+  .pricing-card-featured {
+    padding-top: 36px !important;
+  }
+}
+
+/* Smooth Horizontal Scroll without visible scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

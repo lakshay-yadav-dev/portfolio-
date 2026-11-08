@@ -217,25 +217,25 @@ function renderPreview(key) {
   `).join('');
 
   container.innerHTML = `
-    <div class="p-6 sm:p-8 space-y-8 text-left bg-[#0f1118]">
+    <div class="p-4 sm:p-8 space-y-6 sm:space-y-8 text-left bg-[#0f1118]">
       
       <!-- Portfolio Header Mockup -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
-        <div class="flex items-center gap-4">
-          <img src="${data.avatar}" alt="${data.name}" class="w-14 h-14 rounded-full object-cover border border-white/20 shadow-md shrink-0" />
-          <div>
+        <div class="flex items-start sm:items-center gap-3.5 sm:gap-4">
+          <img src="${data.avatar}" alt="${data.name}" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border border-white/20 shadow-md shrink-0" />
+          <div class="min-w-0">
             <div class="flex items-center gap-2 flex-wrap">
-              <h4 class="text-lg font-bold text-white tracking-tight">${data.name}</h4>
-              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <h4 class="text-base sm:text-lg font-bold text-white tracking-tight">${data.name}</h4>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 ${data.availabilityBadge}
               </span>
             </div>
-            <p class="text-sm text-indigo-400 font-medium mt-0.5">${data.role}</p>
-            <p class="text-xs text-slate-400 mt-0.5">${data.location}</p>
+            <p class="text-xs sm:text-sm text-indigo-400 font-medium mt-0.5">${data.role}</p>
+            <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">${data.location}</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 shrink-0">
+        <div class="flex items-center flex-wrap gap-2 shrink-0 w-full sm:w-auto pt-1 sm:pt-0">
           <a href="https://www.linkedin.com/in/lakshay-yadav-0879028b/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 border border-sky-500/30 text-xs font-semibold flex items-center gap-1.5 transition" title="LinkedIn Profile">
             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 0 0-1.66 1.64 1.64 1.64 0 0 0 1.66 1.63 1.64 1.64 0 0 0 1.65-1.63 1.64 1.64 0 0 0-1.65-1.64z"/></svg>
             <span>LinkedIn</span>
@@ -243,7 +243,7 @@ function renderPreview(key) {
           <button class="px-3.5 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] text-xs font-semibold text-slate-200 border border-white/[0.1] transition">
             Resume (PDF)
           </button>
-          <button class="trigger-get-portfolio px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition">
+          <button class="trigger-get-portfolio px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition" data-plan="professional">
             Contact
           </button>
         </div>

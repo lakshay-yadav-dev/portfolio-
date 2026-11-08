@@ -61,17 +61,16 @@
 
   <!-- TOP ANNOUNCEMENT BANNER -->
   <aside aria-label="Announcement"
-    class="border-b border-white/[0.08] bg-[#10121a] py-2 px-4 text-center text-xs text-slate-300">
-    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+    class="border-b border-purple-500/20 bg-gradient-to-r from-[#141224] via-[#10121a] to-[#141224] py-2 px-3 text-center text-xs text-slate-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap text-[11px] sm:text-xs">
       <span
-        class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-        Transparent Pricing
+        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+        🪔 Special Diwali Offer
       </span>
-      <span>Complete custom portfolio website with private CMS access for <strong
-          class="text-white font-semibold">₹3,500 one-time</strong>. Zero monthly hosting fees.</span>
+      <span>Personal customizable portfolio website for <span class="line-through text-slate-400 font-medium">₹3,500</span> <strong
+          class="text-purple-300 font-bold">₹3,200 only</strong> (Save ₹300). Free lifetime hosting & CMS included.</span>
       <a href="#pricing"
-        class="text-indigo-400 hover:text-indigo-300 font-semibold underline underline-offset-4 ml-1">View Pricing
-        Details →</a>
+        class="text-purple-400 hover:text-purple-300 font-semibold underline underline-offset-4 ml-1">Claim Offer →</a>
     </div>
   </aside>
 
@@ -122,9 +121,10 @@
           <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400"></i>
         </a>
         <button
-          class="trigger-get-portfolio btn-primary px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-sm">
+          class="trigger-get-portfolio btn-primary px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-sm" data-plan="professional">
           <span>Get Your Portfolio</span>
-          <span class="text-indigo-200 font-mono text-[11px] bg-indigo-700/60 px-1.5 py-0.5 rounded">₹3,500</span>
+          <span class="line-through text-indigo-300 text-[10px]">₹3,500</span>
+          <span class="text-white font-mono text-[11px] bg-purple-600/90 px-1.5 py-0.5 rounded font-bold">₹3,200</span>
         </button>
       </div>
 
@@ -142,7 +142,12 @@
       <a href="#preview" class="block py-2 text-slate-300 hover:text-white">Live Examples</a>
       <a href="#how-it-works" class="block py-2 text-slate-300 hover:text-white">How It Works</a>
       <a href="#features" class="block py-2 text-slate-300 hover:text-white">What's Included</a>
-      <a href="#pricing" class="block py-2 text-slate-300 hover:text-white">Pricing (₹3,500)</a>
+      <a href="#pricing" class="block py-2 text-purple-300 hover:text-white flex items-center justify-between font-medium">
+        <span>Pricing (Diwali Offer)</span>
+        <span class="text-xs bg-purple-500/20 px-2 py-0.5 rounded text-purple-300 font-bold">
+          <span class="line-through text-slate-400 font-normal mr-1">₹3,500</span>₹3,200
+        </span>
+      </a>
       <a href="#support" class="block py-2 text-sky-400 hover:text-sky-300 font-medium">Telegram Support
         (@Luckyydv_876)</a>
       <a href="#faq" class="block py-2 text-slate-300 hover:text-white">FAQ</a>
@@ -151,8 +156,10 @@
           class="w-full btn-secondary py-2 rounded-lg text-xs text-center font-medium">
           View Demo Site →
         </a>
-        <button class="trigger-get-portfolio w-full btn-primary py-2.5 rounded-lg text-xs font-semibold text-center">
-          Get Your Portfolio — ₹3,500
+        <button class="trigger-get-portfolio w-full btn-primary py-2.5 rounded-lg text-xs font-semibold text-center flex items-center justify-center gap-1.5" data-plan="professional">
+          <span>Get Your Portfolio &bull;</span>
+          <span class="line-through text-indigo-300 text-[11px]">₹3,500</span>
+          <span class="text-white font-bold">₹3,200</span>
         </button>
       </div>
     </div>
@@ -163,42 +170,43 @@
     <!-- ========================================================
          HERO SECTION
          ======================================================== -->
-    <section class="pt-16 pb-16 sm:pt-24 sm:pb-20 text-center px-4 sm:px-6">
+    <section class="pt-12 pb-16 sm:pt-24 sm:pb-20 text-center px-4 sm:px-6">
       <div class="max-w-4xl mx-auto space-y-6">
 
         <!-- Refined Badge -->
-        <div class="pill-badge">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Starting at ₹3,500 &bull; One-Time Payment &bull; No Hidden Charges</span>
+        <div class="pill-badge max-w-full inline-flex items-center justify-center flex-wrap gap-1.5 px-3.5 py-1.5 text-xs text-center border-purple-500/30 bg-purple-950/20">
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse shrink-0"></span>
+          <span>🪔 <strong>Diwali Offer:</strong> <span class="line-through text-slate-400">₹3,500</span> <strong class="text-purple-300 font-extrabold text-sm">₹3,200</strong> &bull; One-Time Payment &bull; Zero Hidden Charges</span>
         </div>
 
         <!-- Main Headline -->
-        <h1 class="font-heading text-4xl sm:text-6xl font-bold text-white tracking-tight leading-[1.15]">
+        <h1 class="font-heading text-3xl sm:text-6xl font-bold text-white tracking-tight leading-[1.15]">
           Your Personal Portfolio. <br />
           <span class="text-slate-300">Your Professional Identity.</span>
         </h1>
 
         <!-- Subheading -->
-        <p class="text-base sm:text-xl text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-xl text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
           Get your own premium portfolio website and customize it without coding.
         </p>
 
         <!-- Conversational Value Description -->
-        <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed">
+        <p class="text-xs sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed px-1">
           A generic resume PDF gets lost in an inbox with 300 applicants. A fast, modern personal website with your
           projects, case studies, and skills establishes your credibility instantly.
         </p>
 
         <!-- CTAs -->
-        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto w-full">
           <button
-            class="trigger-get-portfolio w-full sm:w-auto btn-primary px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+            class="trigger-get-portfolio w-full sm:w-auto btn-primary px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-purple-600/25" data-plan="professional">
             <span>Get Your Portfolio</span>
-            <span class="text-indigo-200 font-mono text-xs bg-indigo-700/60 px-2 py-0.5 rounded">₹3,500</span>
+            <span class="line-through text-indigo-300 text-xs">₹3,500</span>
+            <span class="text-white font-mono text-xs bg-purple-600/90 px-2 py-0.5 rounded font-bold">₹3,200</span>
           </button>
 
           <a href="#preview"
-            class="w-full sm:w-auto btn-secondary px-5 py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+            class="w-full sm:w-auto btn-secondary px-5 py-3.5 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
             <i data-lucide="eye" class="w-4 h-4 text-slate-400"></i>
             <span>View Demo Profiles</span>
           </a>
@@ -245,7 +253,7 @@
 
         <!-- Profession Switcher Tabs -->
         <div
-          class="flex items-center justify-center gap-1 sm:gap-2 p-1.5 bg-[#13151f] border border-white/[0.08] rounded-xl max-w-2xl mx-auto overflow-x-auto">
+          class="flex items-center justify-start sm:justify-center gap-1 sm:gap-2 p-1.5 bg-[#13151f] border border-white/[0.08] rounded-xl max-w-2xl mx-auto overflow-x-auto no-scrollbar">
           <button data-profession="developer"
             class="preview-tab active-tab flex items-center gap-1.5 whitespace-nowrap">
             <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
@@ -331,15 +339,18 @@
           </div>
 
           <!-- Step 2 -->
-          <div class="clean-card p-5 space-y-3 flex flex-col justify-between border-indigo-500/30">
+          <div class="clean-card p-5 space-y-3 flex flex-col justify-between border-purple-500/30">
             <div class="space-y-2">
-              <span class="font-mono text-xs font-bold text-indigo-400">02</span>
+              <span class="font-mono text-xs font-bold text-purple-400">02</span>
               <h3 class="font-heading text-base font-bold text-white">Purchase</h3>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Pay ₹3,500 one-time via UPI or Card. No recurring monthly subscription bills.
+                Pay ₹3,200 one-time (Diwali Offer &bull; Save ₹300) via UPI or Card. Zero recurring monthly subscription bills.
               </p>
             </div>
-            <p class="text-[11px] text-indigo-300 pt-2 border-t border-white/[0.06] font-semibold">₹3,500 One-time</p>
+            <p class="text-[11px] text-purple-300 pt-2 border-t border-white/[0.06] font-semibold flex items-center justify-between">
+              <span>Diwali Offer</span>
+              <span><span class="line-through text-slate-400 font-normal mr-1">₹3,500</span>₹3,200</span>
+            </p>
           </div>
 
           <!-- Step 3 -->
@@ -1110,13 +1121,13 @@
           <div class="faq-item active">
             <button
               class="faq-question-btn w-full p-5 text-left flex items-center justify-between text-sm font-bold text-white">
-              <span>Is ₹3,500 really a one-time fee or will I be charged monthly?</span>
+              <span>Is the price really a one-time fee or will I be charged monthly?</span>
               <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-400 transition-transform"></i>
             </button>
             <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-              It is strictly a <strong>one-time payment of ₹3,500</strong>. There are no recurring monthly
-              subscriptions, no server upkeep bills, and no hidden renewal charges. You own your portfolio and login
-              credentials.
+              It is strictly a <strong>one-time payment</strong> (Minimal at ₹1,999, or Professional at ₹3,200 under our Special Diwali Offer, was ₹3,500). There are zero recurring monthly
+              subscriptions, no server upkeep bills, and no hidden renewal charges. You own your portfolio and private login
+              credentials for life.
             </div>
           </div>
 
@@ -1199,19 +1210,24 @@
          ======================================================== -->
     <section class="py-20 border-t border-white/[0.08] bg-[#0f1118] px-4 sm:px-6 text-center">
       <div class="max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full badge-launch-offer text-xs font-semibold">
+          <span>🪔 Limited-Time Diwali Pricing</span>
+        </div>
         <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
           Ready to Claim Your Professional Identity?
         </h2>
         <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-          Stop sending plain PDF resumes. Launch a clean, customizable portfolio website today for <strong
-            class="text-white">₹3,500 one-time</strong>.
+          Stop sending plain PDF resumes. Launch a clean, customizable portfolio website today for <span class="line-through text-slate-400">₹3,500</span> <strong
+            class="text-purple-300 font-bold">₹3,200 one-time</strong>.
         </p>
 
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
-            class="trigger-get-portfolio w-full sm:w-auto btn-primary px-7 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
-            <span>Get Your Portfolio (₹3,500)</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            class="trigger-get-portfolio w-full sm:w-auto btn-primary px-7 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-purple-600/25" data-plan="professional">
+            <span>Get Your Portfolio</span>
+            <span class="line-through text-indigo-300 text-xs">₹3,500</span>
+            <span class="text-white font-mono text-xs bg-purple-600/90 px-2 py-0.5 rounded font-bold">₹3,200</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
           </button>
 
           <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer"
@@ -1247,7 +1263,7 @@
       <div class="flex items-center gap-6 flex-wrap justify-center">
         <a href="#preview" class="hover:text-white transition">Templates</a>
         <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
-        <a href="#pricing" class="hover:text-white transition">Pricing (₹3,500)</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing (Diwali Offer)</a>
         <a href="#support" class="hover:text-white transition">Support</a>
         <a href="#faq" class="hover:text-white transition">FAQ</a>
         <a href="https://t.me/Luckyydv_876" target="_blank" rel="noopener noreferrer"
@@ -1269,7 +1285,7 @@
       </div>
 
       <p class="text-slate-400 text-center md:text-right">
-        &copy; 2026 PortfoliX. Starting price ₹3,500 one-time.
+        &copy; 2026 PortfoliX. Special Diwali Offer starting at ₹1,999 (Professional: ₹3,200, was ₹3,500).
       </p>
 
     </div>
