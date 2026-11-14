@@ -673,7 +673,6 @@ function handleTelegramOrder() {
   const name = document.getElementById('orderName')?.value.trim() || 'Client';
   const role = document.getElementById('orderRole')?.value.trim() || 'Professional';
   const handle = document.getElementById('orderContact')?.value.trim() || 'Not specified';
-  const desiredDomain = document.getElementById('orderDomain')?.value.trim() || 'myportfolio';
 
   const telegramUrl = 'https://t.me/Luckyydv_876';
 
