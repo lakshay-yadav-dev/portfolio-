@@ -830,12 +830,16 @@
               </div>
             </div>
 
-            <!-- CTA Button -->
-            <div class="pt-6">
+            <!-- CTA Button & Direct Payment -->
+            <div class="pt-6 space-y-2">
               <button class="trigger-get-portfolio w-full btn-primary py-3.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30 group" data-plan="professional">
                 <span>Choose This Portfolio</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
               </button>
+              <a id="card2DirectUpiLink" href="upi://pay?pa=ydvlakshay%40fam&pn=Lakshay%20Yadav&am=3200&cu=INR" class="w-full py-2.5 px-3 rounded-xl bg-purple-600/15 hover:bg-purple-600/25 border border-purple-500/30 text-purple-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition text-center shadow-sm">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i>
+                <span id="card2DirectUpiText">Pay ₹3,200</span>
+              </a>
             </div>
 
           </div>
@@ -1419,9 +1423,17 @@
           </div>
         </div>
 
-        <div class="pt-2 space-y-2">
+        <div class="pt-2 space-y-2.5">
+          <!-- Direct 1-Tap UPI Payment Link -->
+          <a id="orderDirectUpiLink" href="upi://pay?pa=ydvlakshay%40fam&pn=Lakshay%20Yadav&am=3200&cu=INR"
+            class="w-full btn-primary py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center shadow-lg shadow-purple-600/30">
+            <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
+            <span id="orderDirectUpiBtnText">Pay ₹3,200</span>
+          </a>
+
+          <!-- Telegram Order Button -->
           <button type="submit"
-            class="w-full btn-telegram py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2">
+            class="w-full btn-telegram py-2.5 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
@@ -1429,10 +1441,11 @@
             <span>Proceed via Telegram Support (@Luckyydv_876)</span>
           </button>
 
+          <!-- QR Code Trigger -->
           <button type="button" id="openUpiBtn"
             class="w-full btn-secondary py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2">
             <i data-lucide="qr-code" class="w-4 h-4 text-purple-400"></i>
-            <span id="payUpiBtnText">Or Pay Directly via UPI (₹3,200)</span>
+            <span id="payUpiBtnText">Or Scan QR Code via UPI</span>
           </button>
         </div>
 
@@ -1459,12 +1472,19 @@
         <div class="text-center space-y-1">
           <span class="text-xs font-mono uppercase text-purple-400 font-semibold">Instant UPI</span>
           <h3 class="font-heading text-xl font-bold text-white">Scan & Pay <span id="upiAmountText">₹3,200</span></h3>
-          <p class="text-xs text-slate-400">One-time payment for lifetime portfolio & CMS access</p>
+          <p class="text-xs text-slate-400">Payee: <strong class="text-white">Lakshay Yadav</strong> &bull; Zero extra fees</p>
         </div>
+
+        <!-- 1-Tap Direct UPI Payment Link (Opens GPay / PhonePe / Paytm / BHIM) -->
+        <a id="directUpiPayLink" href="upi://pay?pa=ydvlakshay%40fam&pn=Lakshay%20Yadav&am=3200&cu=INR"
+          class="w-full btn-primary py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center shadow-lg shadow-purple-600/30">
+          <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
+          <span id="directUpiBtnText">Pay ₹3,200</span>
+        </a>
 
         <div class="bg-white p-3.5 rounded-xl max-w-[190px] mx-auto text-center shadow-md">
           <img id="upiQrImage"
-            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=portfolio.sales@upi&pn=PortfoliX&am=3200&cu=INR"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=ydvlakshay%40fam&pn=Lakshay%20Yadav&am=3200&cu=INR"
             alt="UPI QR Code" class="w-full h-auto mx-auto rounded" />
           <p class="text-[10px] text-slate-700 font-semibold mt-1">GPay &bull; PhonePe &bull; Paytm &bull; BHIM</p>
         </div>
@@ -1472,8 +1492,8 @@
         <div
           class="p-3 bg-white/[0.03] rounded-lg border border-white/[0.08] flex items-center justify-between text-xs">
           <div>
-            <span class="text-slate-400 block text-[10px]">UPI ID</span>
-            <span id="upiIdText" class="font-mono text-white font-semibold">portfolio.sales@upi</span>
+            <span class="text-slate-400 block text-[10px]">Payee: Lakshay Yadav &bull; UPI ID</span>
+            <span id="upiIdText" class="font-mono text-white font-semibold">ydvlakshay@fam</span>
           </div>
           <button id="copyUpiBtn"
             class="px-2.5 py-1 rounded bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/30 font-medium text-xs">

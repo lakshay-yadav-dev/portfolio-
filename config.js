@@ -17,8 +17,9 @@ const SITE_CONFIG = {
   linkedinUrl: 'https://www.linkedin.com/in/lakshay-yadav-0879028b/',
   
   // UPI Payment Details
-  upiId: 'portfolio.sales@upi',
-  merchantName: 'PortfoliX Platform',
+  upiId: 'ydvlakshay@fam',
+  payeeName: 'Lakshay Yadav',
+  merchantName: 'Lakshay Yadav',
   
   // Support & Contact
   supportEmail: 'hello@portfolix.live',

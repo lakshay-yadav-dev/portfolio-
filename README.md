@@ -63,8 +63,10 @@ python -m http.server 8080
 - **LinkedIn Profile**: `https://www.linkedin.com/in/lakshay-yadav-0879028b/`
 - Configured globally in `config.js` and embedded across the floating support button, dedicated support card, and footer.
 
-### 1. Update Your UPI ID
-In `config.js` or `index.html`, update `portfolio.sales@upi` to your preferred UPI ID (GPay / PhonePe / Paytm / BHIM).
+### 1. UPI Payment Integration
+- **UPI ID**: `ydvlakshay@fam`
+- **Payee Name**: `Lakshay Yadav`
+- Direct 1-click deep links (`upi://pay?pa=ydvlakshay%40fam&pn=Lakshay%20Yadav&am=3200&cu=INR`) and QR codes are dynamically managed with automatic expiry after 16-11-2026 reverting to ₹3,500.
 
 ### 2. Deploy in 1 Minute (Free)
 - **Vercel**: Run `npx vercel` in this folder, or push to GitHub and import into Vercel.

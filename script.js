@@ -330,6 +330,18 @@ function initFaqAccordion() {
 const OFFER_DEADLINE_MS = new Date('2026-11-16T23:59:59+05:30').getTime();
 let isOfferActive = true;
 
+// 1-Click UPI Payment Configuration
+const UPI_CONFIG = {
+  pa: 'ydvlakshay@fam',
+  pn: 'Lakshay Yadav',
+  paEncoded: 'ydvlakshay%40fam',
+  pnEncoded: 'Lakshay%20Yadav'
+};
+
+function buildUpiUri(amount) {
+  return `upi://pay?pa=${UPI_CONFIG.paEncoded}&pn=${UPI_CONFIG.pnEncoded}&am=${amount}&cu=INR`;
+}
+
 function initPricingCountdown() {
   updateCountdownTicker();
   setInterval(updateCountdownTicker, 1000);
@@ -420,6 +432,15 @@ function expireOfferPricing() {
   const card2RibbonText = document.getElementById('card2RibbonText');
   if (card2RibbonText) card2RibbonText.innerText = '⭐ Most Popular Choice';
 
+  const card2DirectUpiLink = document.getElementById('card2DirectUpiLink');
+  if (card2DirectUpiLink) {
+    card2DirectUpiLink.href = buildUpiUri(3500);
+  }
+  const card2DirectUpiText = document.getElementById('card2DirectUpiText');
+  if (card2DirectUpiText) {
+    card2DirectUpiText.innerText = 'Pay ₹3,500';
+  }
+
   // 4. Update Announcement Banner & Hero
   const navOfferPrice = document.getElementById('navOfferPrice');
   if (navOfferPrice) navOfferPrice.innerText = '₹3,500';
@@ -503,14 +524,36 @@ function setOrderPlan(planKey) {
   const upiAmountText = document.getElementById('upiAmountText');
   if (upiAmountText) upiAmountText.innerText = plan.offerPrice;
 
+  const upiUri = buildUpiUri(plan.amount);
+
   const upiQrImage = document.getElementById('upiQrImage');
   if (upiQrImage) {
-    upiQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=portfolio.sales@upi&pn=PortfoliX&am=${plan.amount}&cu=INR`;
+    upiQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(upiUri)}`;
+  }
+
+  // Direct 1-tap UPI link in UPI modal
+  const directUpiPayLink = document.getElementById('directUpiPayLink');
+  if (directUpiPayLink) {
+    directUpiPayLink.href = upiUri;
+  }
+  const directUpiBtnText = document.getElementById('directUpiBtnText');
+  if (directUpiBtnText) {
+    directUpiBtnText.innerText = `Pay ${plan.offerPrice}`;
+  }
+
+  // Direct 1-tap UPI link in Order modal
+  const orderDirectUpiLink = document.getElementById('orderDirectUpiLink');
+  if (orderDirectUpiLink) {
+    orderDirectUpiLink.href = upiUri;
+  }
+  const orderDirectUpiBtnText = document.getElementById('orderDirectUpiBtnText');
+  if (orderDirectUpiBtnText) {
+    orderDirectUpiBtnText.innerText = `Pay ${plan.offerPrice}`;
   }
 
   const payUpiBtnText = document.getElementById('payUpiBtnText');
   if (payUpiBtnText) {
-    payUpiBtnText.innerText = `Or Pay Directly via UPI (${plan.offerPrice})`;
+    payUpiBtnText.innerText = `Or Scan QR Code via UPI (${plan.offerPrice})`;
   }
 }
 
@@ -575,7 +618,7 @@ function initModals() {
   const copyUpiBtn = document.getElementById('copyUpiBtn');
   if (copyUpiBtn) {
     copyUpiBtn.addEventListener('click', () => {
-      const upiText = document.getElementById('upiIdText')?.innerText || 'portfolio.sales@upi';
+      const upiText = document.getElementById('upiIdText')?.innerText || 'ydvlakshay@fam';
       navigator.clipboard.writeText(upiText).then(() => {
         copyUpiBtn.innerText = 'Copied!';
         setTimeout(() => {
