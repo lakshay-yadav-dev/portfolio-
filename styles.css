@@ -321,4 +321,66 @@ h1, h2, h3, h4, .font-heading {
   scrollbar-width: none;
 }
 
+/* Countdown Timer Styles */
+.countdown-unit {
+  background: #11131c;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  min-width: 58px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .countdown-unit {
+    min-width: 74px;
+    padding: 10px 14px;
+  }
+}
+
+.countdown-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.45);
+}
+
+@media (min-width: 640px) {
+  .countdown-val {
+    font-size: 26px;
+  }
+}
+
+.countdown-lbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c084fc;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.countdown-sep {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #c084fc;
+  margin-top: -6px;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .countdown-sep {
+    font-size: 22px;
+  }
+}
+
+
 

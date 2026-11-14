@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initMobileMenu();
   setupSmoothScroll();
+  initPricingCountdown();
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -322,6 +323,134 @@ function initFaqAccordion() {
   });
 }
 
+// ===================================================================
+// OFFER COUNTDOWN TIMER (DEADLINE: 16-11-2026, 23:59:59 IST)
+// Price: ₹3,200 until 16-11-2026; automatically reverts to ₹3,500 after.
+// ===================================================================
+const OFFER_DEADLINE_MS = new Date('2026-11-16T23:59:59+05:30').getTime();
+let isOfferActive = true;
+
+function initPricingCountdown() {
+  updateCountdownTicker();
+  setInterval(updateCountdownTicker, 1000);
+}
+
+function updateCountdownTicker() {
+  const now = new Date().getTime();
+  const diff = OFFER_DEADLINE_MS - now;
+
+  if (diff <= 0) {
+    if (isOfferActive) {
+      expireOfferPricing();
+    }
+    return;
+  }
+
+  isOfferActive = true;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  const pad = (n) => String(n).padStart(2, '0');
+
+  // Digital clock boxes
+  const dEl = document.getElementById('timerDays');
+  const hEl = document.getElementById('timerHours');
+  const mEl = document.getElementById('timerMinutes');
+  const sEl = document.getElementById('timerSeconds');
+
+  if (dEl) dEl.innerText = pad(days);
+  if (hEl) hEl.innerText = pad(hours);
+  if (mEl) mEl.innerText = pad(minutes);
+  if (sEl) sEl.innerText = pad(seconds);
+
+  // Micro indicators
+  const card2Text = document.getElementById('card2TimerText');
+  if (card2Text) {
+    card2Text.innerText = `Hurry! ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  const navCount = document.getElementById('navCountdownText');
+  if (navCount) {
+    navCount.innerText = `Ends in ${days}d ${hours}h ${minutes}m`;
+  }
+
+  const heroCount = document.getElementById('heroCountdownText');
+  if (heroCount) {
+    heroCount.innerText = `Ends in ${days}d ${hours}h (Hurry Up!)`;
+  }
+}
+
+function expireOfferPricing() {
+  isOfferActive = false;
+
+  // 1. Update PRICING_PLANS dictionary
+  PRICING_PLANS.professional.offerPrice = '₹3,500';
+  PRICING_PLANS.professional.originalPrice = '₹3,500';
+  PRICING_PLANS.professional.savings = 'Standard Plan';
+  PRICING_PLANS.professional.amount = 3500;
+
+  // 2. Hide countdown grid, show expired badge
+  const countdownGrid = document.getElementById('countdownGrid');
+  if (countdownGrid) countdownGrid.classList.add('hidden');
+
+  const expiredBadge = document.getElementById('timerExpiredBadge');
+  if (expiredBadge) expiredBadge.classList.remove('hidden');
+
+  const timerMessage = document.getElementById('timerMessage');
+  if (timerMessage) {
+    timerMessage.innerHTML = 'Special Offer ended on 16 Nov 2026. Standard pricing of <strong class="text-white">₹3,500</strong> is now active.';
+  }
+
+  // 3. Update Card 2 (Professional)
+  const card2OfferPrice = document.getElementById('card2OfferPrice');
+  if (card2OfferPrice) card2OfferPrice.innerText = '₹3,500';
+
+  const card2OriginalPrice = document.getElementById('card2OriginalPrice');
+  if (card2OriginalPrice) card2OriginalPrice.classList.add('hidden');
+
+  const card2DiscountBadge = document.getElementById('card2DiscountBadge');
+  if (card2DiscountBadge) card2DiscountBadge.classList.add('hidden');
+
+  const card2TimerTag = document.getElementById('card2TimerTag');
+  if (card2TimerTag) card2TimerTag.classList.add('hidden');
+
+  const card2RibbonText = document.getElementById('card2RibbonText');
+  if (card2RibbonText) card2RibbonText.innerText = '⭐ Most Popular Choice';
+
+  // 4. Update Announcement Banner & Hero
+  const navOfferPrice = document.getElementById('navOfferPrice');
+  if (navOfferPrice) navOfferPrice.innerText = '₹3,500';
+
+  const navOriginalPrice = document.getElementById('navOriginalPrice');
+  if (navOriginalPrice) navOriginalPrice.classList.add('hidden');
+
+  const navCountdownTag = document.getElementById('navCountdownTag');
+  if (navCountdownTag) navCountdownTag.classList.add('hidden');
+
+  const heroOfferPrice = document.getElementById('heroOfferPrice');
+  if (heroOfferPrice) heroOfferPrice.innerText = '₹3,500';
+
+  const heroOriginalPrice = document.getElementById('heroOriginalPrice');
+  if (heroOriginalPrice) heroOriginalPrice.classList.add('hidden');
+
+  const heroCountdownText = document.getElementById('heroCountdownText');
+  if (heroCountdownText) heroCountdownText.innerText = 'Standard One-Time Plan';
+
+  // 5. Update dropdown text if present
+  const planSelect = document.getElementById('orderPlanSelect');
+  if (planSelect && planSelect.options[1]) {
+    planSelect.options[1].text = 'Professional Portfolio — ₹3,500 [Popular]';
+  }
+
+  // 6. Refresh modal if open
+  if (typeof setOrderPlan === 'function') {
+    setOrderPlan(selectedPlan);
+  }
+}
+
 const PRICING_PLANS = {
   minimal: {
     name: 'Minimal Portfolio',
@@ -356,11 +485,19 @@ function setOrderPlan(planKey) {
   if (planSelect) planSelect.value = selectedPlan;
 
   const titleEl = document.getElementById('modalPlanTitle');
-  if (titleEl) titleEl.innerText = `${plan.name} • Special Launch Offer`;
+  if (titleEl) {
+    titleEl.innerText = isOfferActive && planKey === 'professional'
+      ? `${plan.name} • Special Launch Offer`
+      : `${plan.name} • Lifetime Setup`;
+  }
 
   const priceEl = document.getElementById('modalPlanPrice');
   if (priceEl) {
-    priceEl.innerHTML = `${plan.offerPrice} <span class="text-xs text-slate-400 line-through font-normal">${plan.originalPrice}</span> <span class="text-xs text-purple-400 font-semibold">(${plan.savings})</span>`;
+    if (plan.originalPrice === plan.offerPrice) {
+      priceEl.innerHTML = `${plan.offerPrice} <span class="text-xs text-slate-400 font-normal">(One-time payment)</span>`;
+    } else {
+      priceEl.innerHTML = `${plan.offerPrice} <span class="text-xs text-slate-400 line-through font-normal">${plan.originalPrice}</span> <span class="text-xs text-purple-400 font-semibold">(${plan.savings})</span>`;
+    }
   }
 
   const upiAmountText = document.getElementById('upiAmountText');
